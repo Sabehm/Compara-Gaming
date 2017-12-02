@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"> <img class="img-fluid" src="assets/img/icon.png" style="height:23px;"></a>
+            <a class="navbar-brand" href="index.php"> <img class="img-fluid" src="assets/img/icon.png" style="height:23px;"></a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
@@ -126,8 +126,8 @@
                         <div class="form-group">
                             <button class="btn btn-outline-warning btn-block" type="submit">Iniciar</button>
                         </div>
-                        <a href="#" class="sign up" id="a-sign-up" style="float: left; color: #6f7a85;">!Regístrate¡</a>
-                        <a href="#" class="forgot" style="float: right; color: #6f7a85;">¿Olvidaste tu contraseña?</a>
+                        <a href="#" class="sign up" id="a-sign-up" style="float: left; color: #6f7a85;">¡Regístrate!</a>
+                        <a href="#" class="forgot" id="a-recov" style="float: right; color: #6f7a85;">¿Olvidaste tu contraseña?</a>
                     </form>
                 </div>
             </div>
@@ -181,9 +181,35 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-outline-warning btn-block" type="submit">!Registrarme¡ </button>
+                                <button class="btn btn-outline-warning btn-block" type="submit">Registrarme</button>
                             </div><a id="a-login" href="#" class="already" style="color: #6f7a85;">¿Ya tienes una cuenta? Inicia sesión.</a>
-                            <button class="btn btn-light btn-sm float-right" type="button"></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fin modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="ssrecov" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Recuperemos tu contraseña</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-container">
+                        <form method="post" id="f-signup" style="text-align: center;">
+                            
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder="E-mail" />
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-outline-warning btn-block" type="submit">Enviar</button>
+                            </div><a id="a-login2" href="#" class="already" style="color: #6f7a85;">Regresar.</a>
                         </form>
                     </div>
                 </div>
@@ -264,6 +290,20 @@
                 e.preventDefault();
                 $('#signupModal').modal('hide');
                 $('#login').modal('show');
+            });
+        });
+        $(function () {
+            $('#a-login2').click(function(e) {
+                e.preventDefault();
+                $('#ssrecov').modal('hide');
+                $('#login').modal('show');
+            });
+        });
+        $(function () {
+            $('#a-recov').click(function(e) {
+                e.preventDefault();
+                $('#login').modal('hide');
+                $('#ssrecov').modal('show');
             });
         });
         $(function () {

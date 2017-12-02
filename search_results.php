@@ -21,16 +21,12 @@ $(document).ready(function(){
                 	data[i] = result.results[i];
                 }
                 var k = 0;
-                var aux = 0;
                 for (i = 0; i < result.results.length; i ++) {
                     if ((i) % 4 == 0) {
-                        aux += 1;
-                        k = aux;
+                        k += 1;
                         $('#meli').append('</div><br><br><div class="card-deck" id="'+k+'">');
-                        //k += 1;
                     }
                     $('#'+k+'').append('<div class="card"><br><img class="card-img mx-auto d-block" src="'+data[i].thumbnail+'" alt="Card image cap" style="margin-left: 35%; width: 40%; height: 25%;" alingn="center"><div class="card-body"><ul class="list-group list-group-flush"><li class="list-group-item"><img src="https://newrelic.cdn.prismic.io/newrelic/972eb862e5d3a50e4f7c525b931458e89d292835_casestudy_mercadolibre_logo.png" style="width: 70px;"></li></ul><p class="card-text">'+data[i].title+'</p></div><ul class="list-group list-group-flush"><li class="list-group-item text-center" style="background-color: #a31915; color: #fff; font-size: 20px;">$'+data[i].price+' MXN.</li></ul><div class="card-footer"><a class="btn btn-outline-dark my-2 my-sm-0" href="'+data[i].permalink+'" role="button">Ver</a></div></div>');
-                    
                 }	
         });
 });
@@ -40,7 +36,7 @@ $(document).ready(function(){
 <body>
     <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"> <img class="img-fluid" src="assets/img/icon.png" style="height:23px;"></a>
+            <a class="navbar-brand" href="index.php"> <img class="img-fluid" src="assets/img/icon.png" style="height:23px;"></a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
