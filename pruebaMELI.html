@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.getJSON demo</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<div id="images"></div>
+ 
+<script>
+(function() {
+  var flickerAPI = "https://api.mercadolibre.com/sites/MLM/search?q=age%20of%20empires";
+  $.getJSON( flickerAPI, {
+    tags: "mount rainier",
+    tagmode: "any",
+    format: "json"
+  })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        $( "<span>" ).attr( "src", item.results[0].id).appendTo( "#images" );
+        if ( i === 3 ) {
+          return false;
+        }
+      });
+    });
+})();
+</script>
+ 
+</body>
+</html>
